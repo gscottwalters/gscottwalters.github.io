@@ -1,0 +1,19 @@
+title: "gscottwalters.org"
+email: ""
+description: "Personal website for gscottwalters — built with Jekyll and the Chippy theme"
+url: "https://gscottwalters.org"
+baseurl: ""
+
+# Attempt to use the Chippy theme via the remote_theme helper. If this theme
+# is not an official Pages theme, replace the value of `remote_theme` with
+# the GitHub repo of the theme (e.g. owner/repo) or set `theme:` to the
+# gem name and add the gem to the Gemfile.
+remote_theme: pages-themes/chippy
+
+plugins:
+  - jekyll-remote-theme
+
+markdown: kramdown
+
+# If you prefer to use a gem-based theme instead, set `theme: jekyll-theme-chippy`
+# and add the appropriate gem to the Gemfile.
