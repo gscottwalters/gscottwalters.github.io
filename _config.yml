@@ -1,3 +1,36 @@
+remote_theme: "mmistakes/minimal-mistakes@4.28.1"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+paginate: 5
+paginate_path: /page:num/
+
+minimal_mistakes_skin: "dark"   # try "contrast" or "air" too
+
+author:
+  name: "Scott Walters"
+  bio: "Systems architect working in HR technology and data strategy."
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/gscottwalters"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+
+
+
 title: "Scott Walters"
 tagline: "Systems architect working in HR technology and data strategy."
 description: "Working notes on data strategy, HR systems, and the infrastructure behind them."
