@@ -14,8 +14,8 @@ intro: "Replace this line with your own headline: a sentence or two on who you a
 # Social icons in the sidebar. An empty value hides that icon.
 social:
   github: "https://github.com/gscottwalters"
-  linkedin: ""
-  bluesky: ""
+  linkedin: "https://linkedin.com/in/gscottwalters"
+  bluesky: "https://bsky.app/profile/gscottwalters.org"
 
 markdown: kramdown
 permalink: /:year/:month/:title.html
