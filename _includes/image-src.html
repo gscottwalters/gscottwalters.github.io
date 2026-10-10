@@ -1,0 +1,6 @@
+{%- comment -%}
+  Outputs a usable image URL. Full URLs (https://...) pass through unchanged;
+  site paths (/assets/images/x.jpg) get the site baseurl prepended.
+  Usage: {% include image-src.html src=page.image %}
+{%- endcomment -%}
+{%- if include.src contains '://' -%}{{ include.src }}{%- else -%}{{ include.src | relative_url }}{%- endif -%}

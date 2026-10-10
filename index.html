@@ -1,0 +1,55 @@
+---
+layout: default
+title: Home
+---
+{% assign latest = site.posts.first %}
+
+<section class="intro">
+  <h1>{{ site.intro }}</h1>
+</section>
+
+{% if latest %}
+<section class="featured">
+  <div class="eyebrow">Latest post</div>
+  <a class="art" href="{{ latest.url | relative_url }}" aria-label="Open {{ latest.title | escape }}">
+    {% if latest.image %}
+    <img src="{% include image-src.html src=latest.image %}" alt="{{ latest.image_alt | default: '' }}">
+    {% else %}
+    <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="40" cy="60" r="5" stroke="#161513" stroke-width="1.4"/>
+      <circle cx="100" cy="30" r="5" stroke="#161513" stroke-width="1.4"/>
+      <circle cx="160" cy="60" r="5" stroke="#161513" stroke-width="1.4"/>
+      <circle cx="100" cy="90" r="5" stroke="#0C7A6C" stroke-width="1.6"/>
+      <path d="M44 58 L96 32 M104 32 L156 58 M100 35 L100 85 M44 62 L96 88 M104 88 L156 62" stroke="#161513" stroke-width="1" opacity="0.55"/>
+    </svg>
+    {% endif %}
+  </a>
+  <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
+  <p>{{ latest.excerpt | strip_html | strip_newlines | truncatewords: 45 }}</p>
+  <div class="meta">
+    <span>{{ latest.date | date: "%B %Y" }}</span>
+    <a href="{{ latest.url | relative_url }}">Continue reading</a>
+  </div>
+</section>
+{% endif %}
+
+{% if site.posts.size > 1 %}
+<hr class="break">
+
+<section class="writing" id="writing">
+  <div class="section-head">
+    <h2>Recent writing</h2>
+    <a class="note" href="{{ '/writing/' | relative_url }}">View all posts</a>
+  </div>
+  <ul class="posts">
+    {% for post in site.posts offset:1 limit:3 %}
+    <li class="post">
+      <div class="date">{{ post.date | date: "%B %Y" }}</div>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | strip_newlines | truncatewords: 32 }}</p>
+      {% if post.categories.size > 0 %}<div class="meta">{{ post.categories | first }}</div>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

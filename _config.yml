@@ -1,19 +1,33 @@
-title: "gscottwalters.org"
-email: ""
-description: "Personal website for gscottwalters — built with Jekyll and the Chippy theme"
+title: "Scott Walters"
+tagline: "Systems architect working in HR technology and data strategy."
+description: "Working notes on data strategy, HR systems, and the infrastructure behind them."
+author: "G. Scott Walters"
+
+# Using the GitHub.io URL while the site is being built.
+# When you switch back to gscottwalters.org, change this to "https://gscottwalters.org".
 url: "https://gscottwalters.github.io"
 baseurl: ""
 
-# Attempt to use the Chippy theme via the remote_theme helper. If this theme
-# is not an official Pages theme, replace the value of `remote_theme` with
-# the GitHub repo of the theme (e.g. owner/repo) or set `theme:` to the
-# gem name and add the gem to the Gemfile.
-remote_theme: pages-themes/chippy
+# Headline shown at the top of the home page. Edit freely.
+intro: "Replace this line with your own headline: a sentence or two on who you are and why this blog exists."
 
-plugins:
-  - jekyll-remote-theme
+# Social icons in the sidebar. An empty value hides that icon.
+social:
+  github: "https://github.com/gscottwalters"
+  linkedin: ""
+  bluesky: ""
 
 markdown: kramdown
+permalink: /:year/:month/:title.html
+timezone: America/Chicago
 
-# If you prefer to use a gem-based theme instead, set `theme: jekyll-theme-chippy`
-# and add the appropriate gem to the Gemfile.
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
