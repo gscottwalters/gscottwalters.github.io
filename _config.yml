@@ -1,7 +1,7 @@
 title: "gscottwalters.org"
 email: ""
 description: "Personal website for gscottwalters — built with Jekyll and the Chippy theme"
-url: "https://gscottwalters.org"
+url: "https://gscottwalters.github.io"
 baseurl: ""
 
 # Attempt to use the Chippy theme via the remote_theme helper. If this theme
